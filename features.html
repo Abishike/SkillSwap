@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Features - SkillSwap</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(to right, #43cea2, #185a9d);
+      color: #fff;
+    }
+    header {
+      padding: 1rem 2rem;
+      background-color: rgba(0, 0, 0, 0.5);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+    }
+    nav a {
+      margin: 0 1rem;
+      color: white;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+    nav a:hover {
+      color: #ffd700;
+    }
+    h1 {
+      font-size: 1.8rem;
+      margin: 0;
+    }
+    .features-container {
+      padding: 3rem 2rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+      text-align: center;
+      max-width: 1200px;
+      margin: auto;
+    }
+    .feature-box {
+      background: rgba(255, 255, 255, 0.1);
+      padding: 2rem;
+      border-radius: 15px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+      transition: transform 0.3s;
+    }
+    .feature-box:hover {
+      transform: translateY(-10px);
+    }
+    h2 {
+      font-size: 2rem;
+      text-align: center;
+      margin-top: 2rem;
+    }
+    footer {
+      background: rgba(0, 0, 0, 0.6);
+      padding: 1.5rem;
+      text-align: center;
+      font-size: 0.9rem;
+      color: #ddd;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>SkillSwap</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="features.html">Features</a>
+      <a href="signup.html">Signup</a>
+      <a href="match.html">Match</a>
+      <a href="contact.html">Contact</a>
+       <a href="profile.html">Profile</a>
+    </nav>
+  </header>
+
+  <h2 class="animate__animated animate__fadeInDown">Platform Features</h2>
+
+  <section class="features-container">
+    <div class="feature-box animate__animated animate__fadeInUp">
+      <h3>Peer-to-Peer Learning</h3>
+      <p>Users directly connect and exchange real skills without an instructor.</p>
+    </div>
+    <div class="feature-box animate__animated animate__fadeInUp animate__delay-1s">
+      <h3>Smart Matchmaking</h3>
+      <p>AI engine matches users based on their teach/learn skill preferences.</p>
+    </div>
+    <div class="feature-box animate__animated animate__fadeInUp animate__delay-2s">
+      <h3>Gamified Profiles</h3>
+      <p>Level up, earn badges, and showcase your learning journey.</p>
+    </div>
+    <div class="feature-box animate__animated animate__fadeInUp animate__delay-3s">
+      <h3>Secure & Verified</h3>
+      <p>All users are verified for safer collaboration and interaction.</p>
+    </div>
+    <div class="feature-box animate__animated animate__fadeInUp animate__delay-4s">
+      <h3>Real-Time Chat</h3>
+      <p>Communicate seamlessly via live chat or scheduled sessions.</p>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 SkillSwap. All rights reserved.</p>
+  </footer>
+</body>
+</html>

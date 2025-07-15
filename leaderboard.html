@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>SkillSwap - Leaderboard</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background: #f0f8ff;
+      color: #333;
+    }
+
+    header {
+      background: #0072ff;
+      color: white;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    header h1 {
+      font-size: 1.8rem;
+    }
+
+    nav a {
+      margin: 0 1rem;
+      text-decoration: none;
+      color: #fff;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: #ffd700;
+    }
+
+    h2 {
+      text-align: center;
+      margin: 2rem 0;
+      font-size: 2.4rem;
+      color: #0072ff;
+    }
+
+    .leaderboard {
+      max-width: 800px;
+      margin: auto;
+      background: #fff;
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    }
+
+    .user {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1rem;
+      margin-bottom: 1rem;
+      border-radius: 10px;
+      background: #f9f9f9;
+      transition: transform 0.3s;
+    }
+
+    .user:hover {
+      transform: scale(1.02);
+    }
+
+    .user .rank {
+      font-size: 1.3rem;
+      width: 40px;
+      font-weight: bold;
+      color: #0072ff;
+    }
+
+    .user .info {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      flex: 1;
+    }
+
+    .user img {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid #0072ff;
+    }
+
+    .user .details {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .user .details span:first-child {
+      font-weight: 600;
+    }
+
+    .user .badge {
+      background: #ffd700;
+      padding: 5px 12px;
+      border-radius: 20px;
+      font-size: 0.8rem;
+      font-weight: bold;
+    }
+
+    .user .points {
+      font-weight: 600;
+      color: #333;
+    }
+
+    footer {
+      background: #333;
+      color: #ccc;
+      padding: 1.5rem;
+      text-align: center;
+      margin-top: 3rem;
+    }
+
+    @media (max-width: 600px) {
+      .user {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .user .info {
+        flex-direction: row;
+        margin-top: 0.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <h1>SkillSwap</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="signup.html">Signup</a>
+      <a href="match.html">Match</a>
+      <a href="groups.html">Groups</a>
+      <a href="leaderboard.html">Leaderboard</a>
+      <a href="profile.html">Profile</a>
+      <a href="chat.html">Chat</a>
+    </nav>
+  </header>
+
+  <h2 class="animate__animated animate__fadeInDown">🏆 Top Contributors</h2>
+
+  <div class="leaderboard animate__animated animate__fadeInUp">
+    <div class="user">
+      <div class="rank">#1</div>
+      <div class="info">
+        <img src="https://i.pravatar.cc/150?img=32" alt="User 1">
+        <div class="details">
+          <span>Priya R.</span>
+          <span class="badge">Gold Mentor</span>
+        </div>
+      </div>
+      <div class="points">1200 pts</div>
+    </div>
+
+    <div class="user">
+      <div class="rank">#2</div>
+      <div class="info">
+        <img src="https://i.pravatar.cc/150?img=45" alt="User 2">
+        <div class="details">
+          <span>Karthik S.</span>
+          <span class="badge">Top Tutor</span>
+        </div>
+      </div>
+      <div class="points">1080 pts</div>
+    </div>
+
+    <div class="user">
+      <div class="rank">#3</div>
+      <div class="info">
+        <img src="https://i.pravatar.cc/150?img=12" alt="User 3">
+        <div class="details">
+          <span>Meena A.</span>
+          <span class="badge">AI Enthusiast</span>
+        </div>
+      </div>
+      <div class="points">950 pts</div>
+    </div>
+
+    <div class="user">
+      <div class="rank">#4</div>
+      <div class="info">
+        <img src="https://i.pravatar.cc/150?img=29" alt="User 4">
+        <div class="details">
+          <span>Rahul V.</span>
+          <span class="badge">Tech Helper</span>
+        </div>
+      </div>
+      <div class="points">880 pts</div>
+    </div>
+
+    <div class="user">
+      <div class="rank">#5</div>
+      <div class="info">
+        <img src="https://i.pravatar.cc/150?img=5" alt="User 5">
+        <div class="details">
+          <span>Anita K.</span>
+          <span class="badge">Design Pro</span>
+        </div>
+      </div>
+      <div class="points">790 pts</div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 SkillSwap. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>

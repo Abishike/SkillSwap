@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>SkillSwap - Skill Suggestion AI</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+  <style>
+    * {
+      margin: 0; padding: 0; box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      min-height: 100vh;
+      background: linear-gradient(135deg, #1f1c2c, #928DAB);
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+    }
+
+    header {
+      background: rgba(0, 0, 0, 0.6);
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    header h1 {
+      font-size: 1.8rem;
+    }
+
+    nav a {
+      margin: 0 0.8rem;
+      text-decoration: none;
+      color: #fff;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+
+    nav a:hover {
+      color: #ffd700;
+    }
+
+    .container {
+      max-width: 700px;
+      margin: 4rem auto;
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(15px);
+      padding: 2.5rem;
+      border-radius: 20px;
+      box-shadow: 0 0 25px rgba(0,0,0,0.5);
+      animation: fadeInUp 1s ease-out;
+    }
+
+    @keyframes fadeInUp {
+      from {
+        transform: translateY(40px);
+        opacity: 0;
+      }
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+
+    h2 {
+      text-align: center;
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    .container p {
+      text-align: center;
+      margin-bottom: 2rem;
+      color: #ddd;
+    }
+
+    input {
+      width: 100%;
+      padding: 12px 20px;
+      font-size: 1rem;
+      border-radius: 30px;
+      border: none;
+      outline: none;
+      background: rgba(255, 255, 255, 0.2);
+      color: #fff;
+      margin-bottom: 1.2rem;
+      transition: background 0.3s ease;
+    }
+
+    input:focus {
+      background: rgba(255, 255, 255, 0.3);
+    }
+
+    button {
+      width: 100%;
+      padding: 12px;
+      border-radius: 30px;
+      background: linear-gradient(135deg, #00f260, #0575e6);
+      color: #fff;
+      border: none;
+      font-size: 1rem;
+      font-weight: bold;
+      cursor: pointer;
+      transition: transform 0.2s ease, box-shadow 0.3s ease;
+    }
+
+    button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+    }
+
+    .suggestions {
+      margin-top: 2rem;
+      animation: fadeIn 0.5s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: scale(0.95); }
+      to   { opacity: 1; transform: scale(1); }
+    }
+
+    .suggestions ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .suggestions li {
+      background: rgba(255, 255, 255, 0.15);
+      padding: 1rem;
+      border-radius: 12px;
+      margin-bottom: 0.8rem;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+      transition: transform 0.3s ease;
+    }
+
+    .suggestions li:hover {
+      transform: scale(1.02);
+      background: rgba(255, 255, 255, 0.25);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <h1>SkillSwap</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="signup.html">Signup</a>
+      <a href="match.html">Match</a>
+      <a href="groups.html">Groups</a>
+      <a href="leaderboard.html">Leaderboard</a>
+      <a href="profile.jsp">Profile</a>
+      <a href="chat.html">Chat</a>
+    </nav>
+  </header>
+
+  <!-- Suggestion Box -->
+  <div class="container">
+    <h2>🧠 Skill Suggestion AI</h2>
+    <p>Type your interest or current skill to receive smart suggestions!</p>
+
+    <input type="text" id="interestInput" placeholder="e.g. Java, Design, ML..." />
+    <button onclick="generateSuggestions()">Suggest Skills</button>
+
+    <div class="suggestions" id="suggestionsBox" style="display: none;">
+      <h3>📋 Suggested Skills:</h3>
+      <ul id="skillList"></ul>
+    </div>
+  </div>
+
+  <!-- JavaScript -->
+  <script>
+    function generateSuggestions() {
+      const input = document.getElementById('interestInput').value.trim().toLowerCase();
+      const skillList = document.getElementById('skillList');
+      const suggestionsBox = document.getElementById('suggestionsBox');
+
+      let suggestions = [];
+
+      if (input.includes("web")) {
+        suggestions = ["HTML & CSS", "JavaScript", "React.js", "Next.js", "Responsive Design"];
+      } else if (input.includes("python")) {
+        suggestions = ["Flask", "Django", "Data Science", "Machine Learning", "Automation"];
+      } else if (input.includes("ai") || input.includes("ml")) {
+        suggestions = ["Neural Networks", "TensorFlow", "Model Evaluation", "Chatbots"];
+      } else if (input.includes("design")) {
+        suggestions = ["Figma", "Adobe XD", "UI Principles", "Prototyping"];
+      } else {
+        suggestions = ["Git & GitHub", "Problem Solving", "Time Management", "Networking"];
+      }
+
+      skillList.innerHTML = "";
+      suggestions.forEach(skill => {
+        const li = document.createElement("li");
+        li.textContent = skill;
+        skillList.appendChild(li);
+      });
+
+      suggestionsBox.style.display = "block";
+    }
+  </script>
+
+</body>
+</html>

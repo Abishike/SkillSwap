@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>SkillSwap - Chat</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+  <style>
+    * {
+      margin: 0; padding: 0; box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background: linear-gradient(to right, #ff6a00, #ee0979);
+      background-size: 400% 400%;
+      animation: fireGradient 8s ease infinite;
+      color: #fff;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    @keyframes fireGradient {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    header {
+      background-color: rgba(0, 0, 0, 0.4);
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    header h1 {
+      font-size: 1.7rem;
+      color: #fff;
+    }
+
+    nav a {
+      margin: 0 1rem;
+      text-decoration: none;
+      color: #fff;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: #ffd700;
+    }
+
+    .chat-container {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      padding: 1rem;
+      overflow-y: auto;
+      backdrop-filter: blur(5px);
+      background-color: rgba(0, 0, 0, 0.2);
+    }
+
+    .message {
+      padding: 10px 16px;
+      margin: 10px;
+      border-radius: 25px;
+      max-width: 70%;
+      word-wrap: break-word;
+      font-size: 1rem;
+      animation: bubblePop 0.3s ease-in-out;
+      transition: transform 0.3s;
+    }
+
+    @keyframes bubblePop {
+      0% { transform: scale(0.6); opacity: 0; }
+      100% { transform: scale(1); opacity: 1; }
+    }
+
+    .sent {
+      background-color: rgba(255, 255, 255, 0.15);
+      color: #fff;
+      align-self: flex-end;
+    }
+
+    .received {
+      background-color: rgba(255, 255, 255, 0.85);
+      color: #000;
+      align-self: flex-start;
+    }
+
+    .chat-input {
+      display: flex;
+      padding: 1rem;
+      background: rgba(255, 255, 255, 0.1);
+      border-top: 2px solid rgba(255, 255, 255, 0.3);
+    }
+
+    .chat-input input {
+      flex: 1;
+      padding: 12px 18px;
+      border-radius: 30px;
+      border: none;
+      font-size: 1rem;
+      outline: none;
+      background: rgba(255,255,255,0.2);
+      color: #fff;
+    }
+
+    .chat-input input::placeholder {
+      color: #eee;
+    }
+
+    .chat-input button {
+      margin-left: 1rem;
+      background-color: #ff5722;
+      color: #fff;
+      border: none;
+      border-radius: 30px;
+      padding: 10px 25px;
+      font-size: 1rem;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .chat-input button:hover {
+      background-color: #ff7043;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header with Navbar -->
+  <header>
+    <h1>🔥 SkillSwap Chat</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="signup.html">Signup</a>
+      <a href="match.html">Match</a>
+      <a href="groups.html">Groups</a>
+      <a href="leaderboard.html">Leaderboard</a>
+      <a href="profile.jsp">Profile</a>
+      <a href="chat.html">Chat</a>
+    </nav>
+  </header>
+
+  <!-- Chat Box -->
+  <div class="chat-container" id="chat-box">
+    <div class="message received">👋 Hi! Welcome to SkillSwap. How can I help you today?</div>
+  </div>
+
+  <!-- Message Input -->
+  <div class="chat-input">
+    <input type="text" id="messageInput" placeholder="Type your message..." />
+    <button onclick="sendMessage()">Send</button>
+  </div>
+
+  <!-- Script -->
+  <script>
+    const chatBox = document.getElementById("chat-box");
+    const input = document.getElementById("messageInput");
+
+    function sendMessage() {
+      const text = input.value.trim();
+      if (!text) return;
+
+      const userMessage = document.createElement("div");
+      userMessage.className = "message sent";
+      userMessage.textContent = text;
+      chatBox.appendChild(userMessage);
+
+      input.value = "";
+      chatBox.scrollTop = chatBox.scrollHeight;
+
+      // Simulate AI Response
+      setTimeout(() => {
+        const reply = document.createElement("div");
+        reply.className = "message received";
+        reply.textContent = "🤖 SkillBot: Thanks for your message!";
+        chatBox.appendChild(reply);
+        chatBox.scrollTop = chatBox.scrollHeight;
+      }, 1000);
+    }
+
+    input.addEventListener("keydown", function (e) {
+      if (e.key === "Enter") {
+        sendMessage();
+      }
+    });
+  </script>
+
+</body>
+</html>

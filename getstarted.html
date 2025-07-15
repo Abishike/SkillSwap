@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>SkillSwap - Get Started</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Google Font and Animate.css -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(to right, #1f4037, #99f2c8);
+      font-family: 'Poppins', sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      color: #fff;
+      animation: fadeIn 1s ease-in-out;
+    }
+
+    h1 {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+      text-shadow: 1px 1px 5px #000;
+    }
+
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 2rem;
+      width: 90%;
+      max-width: 1000px;
+      margin-top: 2rem;
+    }
+
+    .card {
+      background: rgba(255, 255, 255, 0.1);
+      padding: 2rem;
+      border-radius: 20px;
+      text-align: center;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 0 10px rgba(0,0,0,0.3);
+      transition: transform 0.3s ease-in-out;
+    }
+
+    .card:hover {
+      transform: translateY(-10px);
+    }
+
+    .card h3 {
+      margin-bottom: 1rem;
+      font-size: 1.5rem;
+    }
+
+    .btn-get-started {
+      margin-top: 3rem;
+      padding: 12px 30px;
+      font-size: 1.2rem;
+      background: #00b09b;
+      color: #fff;
+      border-radius: 30px;
+      text-decoration: none;
+      transition: background 0.3s ease-in-out;
+    }
+
+    .btn-get-started:hover {
+      background: #00ff99;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to   { opacity: 1; }
+    }
+
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 2rem;
+      }
+    }
+  </style>
+</head>
+<body class="animate__animated animate__fadeInUp">
+
+  <h1>Explore SkillSwap Features</h1>
+
+  <div class="feature-grid">
+    <div class="card animate__animated animate__zoomIn">
+      <h3>Find Skill Partners</h3>
+      <p>Match with learners and teachers around the world based on your interests.</p>
+    </div>
+    <div class="card animate__animated animate__zoomIn animate__delay-1s">
+      <h3>Create a Learning Path</h3>
+      <p>Plan your goals and track your skill progress with personalized timelines.</p>
+    </div>
+    <div class="card animate__animated animate__zoomIn animate__delay-2s">
+      <h3>Join Study Groups</h3>
+      <p>Team up with like-minded learners in focused study circles and communities.</p>
+    </div>
+    <div class="card animate__animated animate__zoomIn animate__delay-3s">
+      <h3>View Your Dashboard</h3>
+      <p>Check your stats, history, and receive personalized suggestions.</p>
+    </div>
+  </div>
+
+  <!-- Button that redirects to Sign In Page -->
+  <a href="signin.html" class="btn-get-started">Continue to Sign In</a>
+
+</body>
+</html>

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Signup - SkillSwap</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(to right, #ff512f, #dd2476);
+      color: #fff;
+    }
+    header {
+      padding: 1rem 2rem;
+      background-color: rgba(0, 0, 0, 0.6);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    nav a {
+      margin: 0 1rem;
+      color: white;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+    nav a:hover {
+      color: #ffd700;
+    }
+    h1 {
+      font-size: 1.8rem;
+    }
+    .form-container {
+      max-width: 500px;
+      margin: 4rem auto;
+      background: rgba(0,0,0,0.3);
+      padding: 2rem;
+      border-radius: 15px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    }
+    h2 {
+      text-align: center;
+      margin-bottom: 1.5rem;
+    }
+    input, select, button {
+      width: 100%;
+      padding: 0.8rem;
+      margin: 0.5rem 0;
+      border: none;
+      border-radius: 10px;
+    }
+    button {
+      background-color: #fff;
+      color: #dd2476;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    button:hover {
+      background-color: #ffd700;
+    }
+    footer {
+      background: rgba(0,0,0,0.7);
+      padding: 1.5rem;
+      text-align: center;
+      color: #ddd;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>SkillSwap</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="features.html">Features</a>
+      <a href="signup.html">Signup</a>
+      <a href="match.html">Match</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <div class="form-container animate__animated animate__fadeInUp">
+    <h2>Create Your Account</h2>
+    <form>
+      <input type="text" placeholder="Full Name" required>
+      <input type="email" placeholder="Email" required>
+      <input type="password" placeholder="Password" required>
+      <select required>
+        <option value="">I want to learn...</option>
+        <option value="Java">Java</option>
+        <option value="Python">Python</option>
+        <option value="Web Design">Web Design</option>
+        <option value="Photography">Photography</option>
+      </select>
+      <select required>
+        <option value="">I can teach...</option>
+        <option value="C++">C++</option>
+        <option value="UI/UX">UI/UX</option>
+        <option value="Marketing">Marketing</option>
+        <option value="Spanish">Spanish</option>
+      </select>
+      <button type="submit">Sign Up</button>
+    </form>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 SkillSwap. All rights reserved.</p>
+  </footer>
+</body>
+</html>

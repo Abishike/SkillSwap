@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>SkillSwap - Skill Blogs</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(to right, #ff9a9e, #fad0c4);
+      color: #333;
+    }
+
+    header {
+      background: rgba(0, 0, 0, 0.8);
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: #fff;
+    }
+
+    nav a {
+      margin: 0 1rem;
+      text-decoration: none;
+      color: #fff;
+    }
+
+    nav a:hover {
+      color: #ffe600;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: 3rem auto;
+      padding: 2rem;
+      background: rgba(255, 255, 255, 0.9);
+      border-radius: 15px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 2rem;
+      color: #222;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 2rem;
+    }
+
+    input, textarea {
+      margin: 0.5rem 0;
+      padding: 0.8rem;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      font-size: 1rem;
+    }
+
+    button {
+      background: #ff6f61;
+      color: white;
+      padding: 0.8rem;
+      border: none;
+      border-radius: 10px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    button:hover {
+      background: #ff3e3e;
+    }
+
+    .blog-post {
+      background: #fff;
+      border-left: 6px solid #ff6f61;
+      padding: 1rem;
+      border-radius: 10px;
+      margin-bottom: 1.5rem;
+      box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+    }
+
+    .blog-post h3 {
+      margin: 0;
+      color: #333;
+    }
+
+    .blog-post p {
+      color: #555;
+      margin-top: 0.5rem;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <h1>SkillSwap</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="signup.html">Signup</a>
+      <a href="match.html">Match</a>
+      <a href="groups.html">Groups</a>
+      <a href="leaderboard.html">Leaderboard</a>
+      <a href="profile.jsp">Profile</a>
+      <a href="chat.html">Chat</a>
+    </nav>
+  </header>
+
+  <!-- Blog Content -->
+  <div class="container">
+    <h2>📝 Skill Blogs</h2>
+
+    <form id="blogForm">
+      <input type="text" id="blogTitle" placeholder="Blog title..." required />
+      <textarea id="blogContent" rows="4" placeholder="Write your learning experience..." required></textarea>
+      <button type="submit">Post Blog</button>
+    </form>
+
+    <div id="blogList">
+      <!-- Blog posts will appear here -->
+    </div>
+  </div>
+
+  <!-- Script -->
+  <script>
+    const blogForm = document.getElementById("blogForm");
+    const blogList = document.getElementById("blogList");
+
+    blogForm.addEventListener("submit", function(e) {
+      e.preventDefault();
+
+      const title = document.getElementById("blogTitle").value.trim();
+      const content = document.getElementById("blogContent").value.trim();
+
+      if (title && content) {
+        const blogPost = document.createElement("div");
+        blogPost.classList.add("blog-post");
+
+        blogPost.innerHTML = `<h3>${title}</h3><p>${content}</p>`;
+        blogList.prepend(blogPost);
+
+        // Clear input
+        blogForm.reset();
+      }
+    });
+  </script>
+
+</body>
+</html>

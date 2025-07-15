@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>SkillSwap - Learning Goals</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(to right, #2b5876, #4e4376);
+      color: #fff;
+    }
+
+    header {
+      background: rgba(0, 0, 0, 0.8);
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    nav a {
+      margin: 0 1rem;
+      text-decoration: none;
+      color: #fff;
+    }
+
+    nav a:hover {
+      color: #00ff99;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 3rem auto;
+      padding: 2rem;
+      background-color: rgba(255, 255, 255, 0.08);
+      border-radius: 15px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 1rem;
+    }
+
+    form {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 2rem;
+      gap: 10px;
+    }
+
+    input[type="text"] {
+      padding: 10px;
+      font-size: 1rem;
+      border: none;
+      border-radius: 8px;
+      width: 70%;
+    }
+
+    button {
+      padding: 10px 18px;
+      font-size: 1rem;
+      background: #00c6ff;
+      border: none;
+      border-radius: 8px;
+      color: white;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    button:hover {
+      background: #00ff99;
+      color: black;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    li {
+      background: rgba(255, 255, 255, 0.1);
+      padding: 10px 15px;
+      margin-bottom: 10px;
+      border-radius: 10px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    li span {
+      flex: 1;
+    }
+
+    li.completed span {
+      text-decoration: line-through;
+      color: #ccc;
+    }
+
+    .actions button {
+      margin-left: 10px;
+      background: transparent;
+      border: 1px solid #fff;
+      border-radius: 6px;
+      color: white;
+      cursor: pointer;
+      padding: 4px 8px;
+    }
+
+    .actions button:hover {
+      background: #00ff99;
+      color: black;
+      border-color: #00ff99;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <h1>SkillSwap</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="signup.html">Signup</a>
+      <a href="match.html">Match</a>
+      <a href="groups.html">Groups</a>
+      <a href="leaderboard.html">Leaderboard</a>
+      <a href="profile.jsp">Profile</a>
+      <a href="chat.html">Chat</a>
+    </nav>
+  </header>
+
+  <!-- Main Content -->
+  <div class="container">
+    <h2>🎯 My Learning Goals</h2>
+
+    <form id="goalForm">
+      <input type="text" id="goalInput" placeholder="Enter a new learning goal..." required />
+      <button type="submit">Add Goal</button>
+    </form>
+
+    <ul id="goalList">
+      <!-- Goals will be added here -->
+    </ul>
+  </div>
+
+  <!-- JavaScript to Manage Goals -->
+  <script>
+    const goalForm = document.getElementById('goalForm');
+    const goalInput = document.getElementById('goalInput');
+    const goalList = document.getElementById('goalList');
+
+    goalForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+      const goalText = goalInput.value.trim();
+      if (goalText !== '') {
+        addGoal(goalText);
+        goalInput.value = '';
+      }
+    });
+
+    function addGoal(text) {
+      const li = document.createElement('li');
+      const span = document.createElement('span');
+      span.textContent = text;
+
+      const actions = document.createElement('div');
+      actions.className = 'actions';
+
+      const completeBtn = document.createElement('button');
+      completeBtn.textContent = '✔';
+      completeBtn.onclick = () => {
+        li.classList.toggle('completed');
+      };
+
+      const deleteBtn = document.createElement('button');
+      deleteBtn.textContent = '✖';
+      deleteBtn.onclick = () => {
+        li.remove();
+      };
+
+      actions.appendChild(completeBtn);
+      actions.appendChild(deleteBtn);
+
+      li.appendChild(span);
+      li.appendChild(actions);
+      goalList.appendChild(li);
+    }
+  </script>
+
+</body>
+</html>

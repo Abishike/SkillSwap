@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>SkillSwap - Saved Resources</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+      color: #fff;
+    }
+
+    header {
+      background: rgba(0, 0, 0, 0.85);
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    nav a {
+      margin: 0 1rem;
+      text-decoration: none;
+      color: #fff;
+    }
+
+    nav a:hover {
+      color: #00ffcc;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 3rem auto;
+      padding: 2rem;
+      background: rgba(255, 255, 255, 0.08);
+      border-radius: 20px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 1.5rem;
+    }
+
+    form {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 2rem;
+    }
+
+    input[type="text"] {
+      padding: 10px;
+      flex: 2;
+      border: none;
+      border-radius: 8px;
+    }
+
+    input[type="url"] {
+      padding: 10px;
+      flex: 3;
+      border: none;
+      border-radius: 8px;
+    }
+
+    button {
+      padding: 10px 18px;
+      background: #00d2d3;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    button:hover {
+      background: #00ffcc;
+      color: #000;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    li {
+      background: rgba(255, 255, 255, 0.1);
+      margin-bottom: 12px;
+      padding: 12px 18px;
+      border-radius: 10px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    li a {
+      color: #00ffcc;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .remove-btn {
+      background: transparent;
+      color: #fff;
+      border: 1px solid #fff;
+      padding: 4px 10px;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+
+    .remove-btn:hover {
+      background: #ff4d4d;
+      color: white;
+      border-color: #ff4d4d;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <h1>SkillSwap</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="signup.html">Signup</a>
+      <a href="match.html">Match</a>
+      <a href="groups.html">Groups</a>
+      <a href="leaderboard.html">Leaderboard</a>
+      <a href="profile.jsp">Profile</a>
+      <a href="chat.html">Chat</a>
+    </nav>
+  </header>
+
+  <!-- Main Content -->
+  <div class="container">
+    <h2>📚 Saved Resources</h2>
+
+    <form id="resourceForm">
+      <input type="text" id="resourceTitle" placeholder="Enter resource title..." required />
+      <input type="url" id="resourceURL" placeholder="Enter resource URL..." required />
+      <button type="submit">Save</button>
+    </form>
+
+    <ul id="resourceList">
+      <!-- Saved links will appear here -->
+    </ul>
+  </div>
+
+  <!-- JavaScript -->
+  <script>
+    const form = document.getElementById('resourceForm');
+    const list = document.getElementById('resourceList');
+    const titleInput = document.getElementById('resourceTitle');
+    const urlInput = document.getElementById('resourceURL');
+
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      const title = titleInput.value.trim();
+      const url = urlInput.value.trim();
+      if (title && url) {
+        const li = document.createElement('li');
+        const link = document.createElement('a');
+        link.href = url;
+        link.target = '_blank';
+        link.textContent = title;
+
+        const removeBtn = document.createElement('button');
+        removeBtn.textContent = '✖';
+        removeBtn.className = 'remove-btn';
+        removeBtn.onclick = () => li.remove();
+
+        li.appendChild(link);
+        li.appendChild(removeBtn);
+        list.appendChild(li);
+
+        titleInput.value = '';
+        urlInput.value = '';
+      }
+    });
+  </script>
+
+</body>
+</html>

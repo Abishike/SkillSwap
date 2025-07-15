@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>SkillSwap - Progress Reports</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(to right, #16222A, #3A6073);
+      color: #fff;
+    }
+
+    header {
+      background: rgba(0, 0, 0, 0.8);
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    nav a {
+      margin: 0 1rem;
+      text-decoration: none;
+      color: #fff;
+    }
+
+    nav a:hover {
+      color: #00ff99;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 3rem auto;
+      padding: 2rem;
+      background-color: rgba(255, 255, 255, 0.08);
+      border-radius: 15px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    .progress-item {
+      margin-bottom: 1.5rem;
+    }
+
+    .label {
+      font-size: 1.1rem;
+      margin-bottom: 0.3rem;
+    }
+
+    .bar-container {
+      background: #333;
+      border-radius: 20px;
+      overflow: hidden;
+    }
+
+    .bar {
+      height: 24px;
+      border-radius: 20px;
+      background: linear-gradient(90deg, #00c6ff, #0072ff);
+      width: 0;
+      transition: width 1s ease-in-out;
+      text-align: right;
+      padding-right: 10px;
+      line-height: 24px;
+      color: #fff;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <h1>SkillSwap</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="signup.html">Signup</a>
+      <a href="match.html">Match</a>
+      <a href="groups.html">Groups</a>
+      <a href="leaderboard.html">Leaderboard</a>
+      <a href="profile.jsp">Profile</a>
+      <a href="chat.html">Chat</a>
+    </nav>
+  </header>
+
+  <!-- Main Content -->
+  <div class="container">
+    <h2>📈 Your Skill Progress</h2>
+
+    <div class="progress-item">
+      <div class="label">HTML & CSS</div>
+      <div class="bar-container"><div class="bar" data-progress="85">85%</div></div>
+    </div>
+
+    <div class="progress-item">
+      <div class="label">JavaScript</div>
+      <div class="bar-container"><div class="bar" data-progress="70">70%</div></div>
+    </div>
+
+    <div class="progress-item">
+      <div class="label">Python</div>
+      <div class="bar-container"><div class="bar" data-progress="60">60%</div></div>
+    </div>
+
+    <div class="progress-item">
+      <div class="label">Machine Learning</div>
+      <div class="bar-container"><div class="bar" data-progress="40">40%</div></div>
+    </div>
+
+    <div class="progress-item">
+      <div class="label">Public Speaking</div>
+      <div class="bar-container"><div class="bar" data-progress="75">75%</div></div>
+    </div>
+  </div>
+
+  <!-- JavaScript to animate bars -->
+  <script>
+    window.onload = function () {
+      const bars = document.querySelectorAll('.bar');
+      bars.forEach(bar => {
+        const progress = bar.getAttribute('data-progress');
+        bar.style.width = progress + '%';
+      });
+    }
+  </script>
+
+</body>
+</html>

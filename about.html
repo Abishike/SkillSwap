@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About - SkillSwap</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(to right, #6a11cb, #2575fc);
+      color: white;
+    }
+    header {
+      padding: 1rem 2rem;
+      background-color: rgba(0, 0, 0, 0.6);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 1.8rem;
+    }
+    nav a {
+      margin: 0 1rem;
+      color: white;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+    nav a:hover {
+      color: #ffd700;
+    }
+    .about-section {
+      padding: 4rem 2rem;
+      max-width: 900px;
+      margin: auto;
+      text-align: center;
+    }
+    .about-section h2 {
+      font-size: 2.8rem;
+      margin-bottom: 1rem;
+    }
+    .about-section p {
+      font-size: 1.1rem;
+      line-height: 1.8;
+      animation: fadeIn 2s ease-in-out;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    footer {
+      background: rgba(0,0,0,0.7);
+      padding: 1.5rem;
+      text-align: center;
+      font-size: 0.9rem;
+      color: #ddd;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>SkillSwap</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="features.html">Features</a>
+      <a href="signup.html">Signup</a>
+      <a href="match.html">Match</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <section class="about-section">
+    <h2 class="animate__animated animate__fadeInDown">What is SkillSwap?</h2>
+    <p>
+      SkillSwap is a community-powered learning platform where people can both teach and learn skills through mutual exchange. It empowers users to list what they can teach and what they want to learn, and then intelligently matches them with complementary users. Our mission is to create a collaborative environment that democratizes education, encourages community growth, and makes learning accessible and free of cost.
+    </p>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 SkillSwap. All rights reserved.</p>
+  </footer>
+</body>
+</html>

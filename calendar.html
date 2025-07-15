@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>SkillSwap - Skill Calendar</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(to right, #4facfe, #00f2fe);
+      color: #333;
+    }
+
+    header {
+      background: rgba(0, 0, 0, 0.6);
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: #fff;
+    }
+
+    nav a {
+      margin: 0 1rem;
+      text-decoration: none;
+      color: #fff;
+    }
+
+    nav a:hover {
+      color: #ffd700;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: 2rem auto;
+      padding: 2rem;
+      background: rgba(255, 255, 255, 0.2);
+      border-radius: 20px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 2rem;
+      color: #fff;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background-color: #fff;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+
+    th, td {
+      padding: 1rem;
+      text-align: center;
+      border-bottom: 1px solid #eee;
+    }
+
+    th {
+      background-color: #00c6ff;
+      color: #fff;
+    }
+
+    tr:hover {
+      background-color: #f1f1f1;
+    }
+
+    .highlight {
+      background-color: #eaffd0;
+      font-weight: bold;
+      color: #2c3e50;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>SkillSwap</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="signup.html">Signup</a>
+      <a href="match.html">Match</a>
+      <a href="groups.html">Groups</a>
+      <a href="leaderboard.html">Leaderboard</a>
+      <a href="profile.jsp">Profile</a>
+      <a href="chat.html">Chat</a>
+    </nav>
+  </header>
+
+  <div class="container">
+    <h2>📅 My Skill Calendar</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Date</th>
+          <th>Session</th>
+          <th>Skill</th>
+          <th>Partner</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>July 15, 2025</td>
+          <td>10:00 AM - 11:00 AM</td>
+          <td>Python Basics</td>
+          <td>Raj Kumar</td>
+        </tr>
+        <tr class="highlight">
+          <td>July 16, 2025</td>
+          <td>4:00 PM - 5:30 PM</td>
+          <td>Web Design</td>
+          <td>Anjali Mehta</td>
+        </tr>
+        <tr>
+          <td>July 18, 2025</td>
+          <td>2:00 PM - 3:00 PM</td>
+          <td>JavaScript DOM</td>
+          <td>Priya R.</td>
+        </tr>
+        <tr>
+          <td>July 20, 2025</td>
+          <td>5:00 PM - 6:00 PM</td>
+          <td>React Basics</td>
+          <td>Arun D.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+</body>
+</html>

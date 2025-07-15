@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>SkillSwap - Skill Match</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background: linear-gradient(-45deg, #ff6a00, #ff3c00, #f83600, #fe8c00);
+      background-size: 400% 400%;
+      animation: fireFlow 8s ease infinite;
+      color: #fff;
+      min-height: 100vh;
+    }
+
+    @keyframes fireFlow {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    header {
+      background: rgba(0, 0, 0, 0.5);
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    header h1 {
+      font-size: 1.8rem;
+      color: #fff;
+    }
+
+    nav a {
+      margin: 0 0.8rem;
+      text-decoration: none;
+      color: #fff;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+
+    nav a:hover {
+      color: #ffd700;
+    }
+
+    .match-box {
+      background: rgba(255,255,255,0.1);
+      max-width: 500px;
+      margin: 4rem auto;
+      padding: 2rem;
+      border-radius: 20px;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 0 20px rgba(0,0,0,0.5);
+      animation: slideIn 0.8s ease-out;
+    }
+
+    @keyframes slideIn {
+      from {
+        transform: translateY(50px);
+        opacity: 0;
+      }
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+
+    h2 {
+      text-align: center;
+      color: #fff;
+      margin-bottom: 1.5rem;
+      font-size: 1.8rem;
+    }
+
+    label {
+      font-size: 1rem;
+      color: #fff;
+      display: block;
+      margin-top: 1.2rem;
+    }
+
+    select {
+      width: 100%;
+      padding: 0.8rem;
+      font-size: 1rem;
+      margin-top: 0.5rem;
+      border-radius: 10px;
+      border: none;
+      background-color: rgba(255,255,255,0.8);
+      color: #333;
+    }
+
+    button {
+      width: 100%;
+      padding: 0.9rem;
+      font-size: 1.1rem;
+      margin-top: 1.5rem;
+      border-radius: 30px;
+      border: none;
+      background: #ff5722;
+      color: #fff;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    button:hover {
+      background: #e64a19;
+    }
+
+    .result {
+      margin-top: 1.5rem;
+      font-weight: bold;
+      color: #fff;
+      text-align: center;
+      font-size: 1.1rem;
+      animation: pop 0.4s ease-in-out;
+    }
+
+    @keyframes pop {
+      from { transform: scale(0.7); opacity: 0; }
+      to { transform: scale(1); opacity: 1; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation Header -->
+  <header>
+    <h1>🔥 SkillSwap</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="signup.html">Signup</a>
+      <a href="match.html">Match</a>
+      <a href="groups.html">Groups</a>
+      <a href="leaderboard.html">Leaderboard</a>
+      <a href="profile.jsp">Profile</a>
+      <a href="chat.html">Chat</a>
+    </nav>
+  </header>
+
+  <!-- Skill Match Form -->
+  <div class="match-box">
+    <h2>🔁 Find Your Skill Match</h2>
+
+    <label for="yourSkill">Your Skill:</label>
+    <select id="yourSkill">
+      <option>Python</option>
+      <option>Drawing</option>
+      <option>Cooking</option>
+      <option>Public Speaking</option>
+      <option>Video Editing</option>
+    </select>
+
+    <label for="wantSkill">Want to Learn:</label>
+    <select id="wantSkill">
+      <option>Web Development</option>
+      <option>English Speaking</option>
+      <option>Photography</option>
+      <option>Data Science</option>
+      <option>Content Creation</option>
+    </select>
+
+    <button onclick="matchSkills()">🔥 Find Match</button>
+    <div class="result" id="matchResult"></div>
+  </div>
+
+  <!-- JS -->
+  <script>
+    function matchSkills() {
+      const yourSkill = document.getElementById("yourSkill").value;
+      const wantSkill = document.getElementById("wantSkill").value;
+      const result = document.getElementById("matchResult");
+      result.innerHTML = `🎯 Match Found!<br> Someone wants to learn <strong>"${yourSkill}"</strong> and can teach you <strong>"${wantSkill}"</strong>.`;
+      result.style.animation = "pop 0.5s ease-in-out";
+    }
+  </script>
+
+</body>
+</html>

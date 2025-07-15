@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>SkillSwap - Skill Challenges</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background: linear-gradient(to right, #667eea, #764ba2);
+      color: #fff;
+      min-height: 100vh;
+    }
+
+    header {
+      background: rgba(0, 0, 0, 0.7);
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    header h1 {
+      font-size: 1.8rem;
+    }
+
+    nav a {
+      color: #fff;
+      margin: 0 1rem;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    nav a:hover {
+      color: #ffd700;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 3rem auto;
+      padding: 0 1.5rem;
+    }
+
+    h2 {
+      text-align: center;
+      font-size: 2.5rem;
+      margin-bottom: 2rem;
+      color: #fff;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 2rem;
+    }
+
+    .card {
+      background: #fff;
+      color: #333;
+      padding: 2rem;
+      border-radius: 20px;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+      transition: transform 0.4s, box-shadow 0.3s;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 20px 30px rgba(0,0,0,0.3);
+    }
+
+    .card h3 {
+      margin-bottom: 1rem;
+      font-size: 1.4rem;
+    }
+
+    .card p {
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+
+    .badge {
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      background: #ff6b81;
+      color: #fff;
+      font-size: 0.75rem;
+      padding: 5px 12px;
+      border-radius: 20px;
+    }
+
+    .btn {
+      margin-top: 1rem;
+      display: inline-block;
+      padding: 8px 18px;
+      border: none;
+      background: #6c5ce7;
+      color: #fff;
+      border-radius: 25px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: background 0.3s;
+      text-decoration: none;
+    }
+
+    .btn:hover {
+      background: #341f97;
+    }
+
+    footer {
+      background: rgba(0, 0, 0, 0.8);
+      padding: 1rem;
+      text-align: center;
+      color: #ccc;
+      margin-top: 3rem;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <h1>SkillSwap</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="signup.html">Signup</a>
+      <a href="match.html">Match</a>
+      <a href="groups.html">Groups</a>
+      <a href="leaderboard.html">Leaderboard</a>
+      <a href="profile.jsp">Profile</a>
+      <a href="chat.html">Chat</a>
+    </nav>
+  </header>
+
+  <!-- Main Content -->
+  <div class="container">
+    <h2 class="animate__animated animate__fadeInDown">🛠️ Skill Challenges</h2>
+    <div class="grid">
+      <div class="card animate__animated animate__fadeInUp">
+        <span class="badge">Beginner</span>
+        <h3>JavaScript Calculator</h3>
+        <p>Create a simple calculator that performs basic operations (Add, Subtract, Multiply, Divide).</p>
+        <a class="btn" href="#">Start Challenge</a>
+      </div>
+      <div class="card animate__animated animate__fadeInUp animate__delay-1s">
+        <span class="badge">Intermediate</span>
+        <h3>Responsive Portfolio</h3>
+        <p>Build a responsive personal portfolio website using HTML, CSS, and media queries.</p>
+        <a class="btn" href="#">Start Challenge</a>
+      </div>
+      <div class="card animate__animated animate__fadeInUp animate__delay-2s">
+        <span class="badge">Advanced</span>
+        <h3>To-Do List with Local Storage</h3>
+        <p>Design a To-Do List app that stores user data in local storage and allows task editing.</p>
+        <a class="btn" href="#">Start Challenge</a>
+      </div>
+      <div class="card animate__animated animate__fadeInUp animate__delay-3s">
+        <span class="badge">Beginner</span>
+        <h3>Python Palindrome Checker</h3>
+        <p>Write a program that checks if a given word or phrase is a palindrome.</p>
+        <a class="btn" href="#">Start Challenge</a>
+      </div>
+      <div class="card animate__animated animate__fadeInUp animate__delay-4s">
+        <span class="badge">Intermediate</span>
+        <h3>CSS Hover Effects</h3>
+        <p>Create 5 different interactive hover animations using only CSS transitions.</p>
+        <a class="btn" href="#">Start Challenge</a>
+      </div>
+      <div class="card animate__animated animate__fadeInUp animate__delay-5s">
+        <span class="badge">Advanced</span>
+        <h3>Weather App (API)</h3>
+        <p>Build a weather app using JavaScript that fetches real-time data from an API like OpenWeatherMap.</p>
+        <a class="btn" href="#">Start Challenge</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    &copy; 2025 SkillSwap. All rights reserved.
+  </footer>
+
+</body>
+</html>
